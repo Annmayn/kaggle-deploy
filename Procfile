@@ -1,1 +1,1 @@
-web: gunicorn kaggle-deploy:app
+web: gunicorn app:app
