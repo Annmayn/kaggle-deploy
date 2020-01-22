@@ -3,7 +3,7 @@ from views.nlp_getting_started import NlpGettingStartedApi
 
 app = Flask(__name__)
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET'])
 def show():
     return "Hello world"
 
