@@ -5,10 +5,9 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 def show():
-    print(request.get_json()['text'])
-    return request.get_json()
+    return "Hello world"
 
-app.route('/predict', methods=['GET','POST'])(
+app.route('/nlp-getting-started/predict', methods=['POST'])(
     NlpGettingStartedApi.as_view()
 )
 
