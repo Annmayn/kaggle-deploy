@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from flask import request, abort
+from flask import request, abort, jsonify
 
 
 class Response:
@@ -7,6 +7,8 @@ class Response:
         abort(HTTPStatus.BAD_REQUEST, message)
 
     def status_ok(self, message):
+        response = jsonify({"result":message})
+        response.headers.add('Access-Control-Allow-Origin', 'https://kaggle-ml-web.herokuapp.com')
         return {"result":message}
 
 
